@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="yt_playlist_dl",
-    version="0.0.1",
+    version="0.1.0",
     author="Tushar Sadhwani",
     author_email="tushar.sadhwani000@gmail.com",
-    description="A tool to download (and keep up-to-date) a playlist from youtube.",
+    description="A tool to download (and keep up-to-date) playlists from youtube.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/tusharsadhwani/yt_playlist_dl",
@@ -19,4 +19,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    install_requires=['youtube_dl'],
+    entry_points={
+        'console_scripts': ['yt-playlist-dl=yt_playlist_dl.command_line:main'],
+    }
 )
